@@ -5,6 +5,9 @@ on:
     branches: [ master, develop ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   buildMaster:
     name: Build Ci APK from Master
@@ -22,7 +25,7 @@ jobs:
 
       - name: Get Commit Message
         id: commitMessage
-        run: IN="${{ github.event.head_commit.message }}" && echo "::set-output name=message::${IN%%$'\n'*}"
+        run: IN="${{ github.event.head_commit.message }}" && echo "message=${IN%%$'\n'*}" >> $GITHUB_OUTPUT
 
       - name: Setup JDK
         uses: actions/setup-java@v3.6.0
@@ -52,7 +55,7 @@ jobs:
 
       - name: Extract branch name
         shell: bash
-        run: echo "::set-output name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')"
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: File Permissions
@@ -75,7 +78,7 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=json::$content"
+          echo "json=$content" >> $GITHUB_OUTPUT
 
       - name: Sign artifact
         id: signArtifact
@@ -103,9 +106,9 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}-rCompatible
-          prerelease: true
-          title: Rboard Manager Development ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
+          automatic_release_tag: ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
+          prerelease: false
+          title: Deeplink Rboard ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
           files: |
             app/build/outputs/apk/release/app-release.apk
             app/build/outputs/apk/release/output-metadata.json
@@ -116,9 +119,9 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: latest-master
-          prerelease: true
-          title: Rboard Manager Development ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
+          automatic_release_tag: latest
+          prerelease: false
+          title: Deeplink Rboard ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
           files: |
             app/build/outputs/apk/release/app-release.apk
             app/build/outputs/apk/release/output-metadata.json
@@ -140,7 +143,7 @@ jobs:
 
       - name: Get Commit Message
         id: commitMessage
-        run: IN="${{ github.event.head_commit.message }}" && echo "::set-output name=message::${IN%%$'\n'*}"
+        run: IN="${{ github.event.head_commit.message }}" && echo "message=${IN%%$'\n'*}" >> $GITHUB_OUTPUT
 
       - name: Setup JDK
         uses: actions/setup-java@v3.6.0
@@ -170,7 +173,7 @@ jobs:
 
       - name: Extract branch name
         shell: bash
-        run: echo "::set-output name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')"
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: File Permissions
@@ -193,7 +196,7 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=json::$content"
+          echo "json=$content" >> $GITHUB_OUTPUT
 
 
       - name: Sign artifact
@@ -222,9 +225,9 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}-rCompatible-debug
+          automatic_release_tag: ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}-debug
           prerelease: true
-          title: Rboard Manager Development ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
+          title: Deeplink Rboard ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
           files: |
             app/build/outputs/apk/debug/app-debug.apk
             app/build/outputs/apk/debug/output-metadata.json
@@ -237,7 +240,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: latest-debug
           prerelease: true
-          title: Rboard Manager Development ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
+          title: Deeplink Rboard ${{ fromJson(steps.metadataJson.outputs.json).elements[0].versionName }}
           files: |
             app/build/outputs/apk/debug/app-debug.apk
             app/build/outputs/apk/debug/output-metadata.json
