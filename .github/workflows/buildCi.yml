@@ -75,9 +75,6 @@ jobs:
         id: metadataJson
         run: |
           content=`cat app/build/outputs/apk/release/output-metadata.json`
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
           echo "json=$content" >> $GITHUB_OUTPUT
 
       - name: Sign artifact
