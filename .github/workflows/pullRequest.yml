@@ -2,7 +2,7 @@ name: Build Pull Request Develop
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ master, develop ]
 
 jobs:
   build:
@@ -58,15 +58,6 @@ jobs:
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
           arguments: assembleDebug
-
-      - name: Get JSON
-        id: metadataJson
-        run: |
-          content=`cat app/build/outputs/apk/debug/output-metadata.json`
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=json::$content"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.1
