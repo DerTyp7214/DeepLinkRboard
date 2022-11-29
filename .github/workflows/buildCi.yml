@@ -208,10 +208,6 @@ jobs:
           name: Debug Artifact
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Logs
-        run: |
-          echo ${{ steps.metadataJson.outputs.json }}
-
       - name: Create new Release
         if: steps.extract_branch.outputs.BRANCH_NAME == 'develop'
         id: create_release
