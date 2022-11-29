@@ -67,7 +67,6 @@ android {
 
 dependencies {
     implementation(project(":colorutilsc"))
-    implementation(project(":mathc"))
     implementation(project(":rboardcomponents"))
     implementation("com.github.DerTyp7214:PreferencesPlus:1.0")
 
