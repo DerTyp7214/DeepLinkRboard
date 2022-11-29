@@ -4,6 +4,9 @@ on:
   push:
     branches: [ develop ]
 
+permissions:
+  pull-requests: write
+  
 jobs:
   pull_request:
     name: Create Pull Request
@@ -23,7 +26,7 @@ jobs:
       - name: Create Pull Request
         uses: devops-infra/action-pull-request@v0.5.1
         with:
-          github_token: ${{ secrets.REPO_SCOPED_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           template: .tmp/PULL_REQUEST_TEMPLATE.md
           source_branch: develop
           target_branch: master
