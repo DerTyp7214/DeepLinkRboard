@@ -4,6 +4,9 @@ on:
   push:
     branches: [ develop ]
 
+permissions:
+  pull-requests: write
+  
 jobs:
   pull_request:
     name: Create Pull Request
