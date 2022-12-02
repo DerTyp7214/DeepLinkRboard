@@ -42,30 +42,6 @@
         <item name="materialAlertDialogTheme">
             @style/Dialog.DeepLinkRboard.MaterialAlertDialog
         </item>
-
-        <item name="collapsingToolbarLayoutStyle">@style/Widget.CollapsingToolbar</item>
-
-        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
-        <item name="snackbarTextViewStyle">@style/Widget.App.SnackbarTextView</item>
-        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>
-    </style>
-
-    <style name="Theme.DeepLinkRboard.Main" parent="Theme.DeepLinkRboard">
-
-    </style>
-
-    <style name="Theme.DeepLinkRboard.Info" parent="Theme.DeepLinkRboard">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.DeepLinkRboard.InstallPack" parent="Theme.DeepLinkRboard">
-        <item name="android:statusBarColor">@color/color_primary_0_10_overlay</item>
-    </style>
-
-    <style name="Theme.DeepLinkRboard.ShareFlags" parent="Theme.DeepLinkRboard">
-        <item name="android:statusBarColor">@color/color_primary_0_10_overlay</item>
     </style>
 
     <style name="Theme.DeepLinkRboard.TextAppearanceHeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">

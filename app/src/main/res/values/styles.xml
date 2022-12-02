@@ -7,24 +7,6 @@
         <item name="android:windowIsFloating">false</item>
     </style>
 
-    <style name="Widget.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar">
-        <item name="contentScrim">@drawable/color_surface_overlay_background</item>
-    </style>
-
-    <style name="Widget.App.Snackbar" parent="Widget.Material3.Snackbar">
-        <item name="backgroundTint">?attr/colorSecondaryContainer</item>
-    </style>
-
-    <style name="Widget.App.SnackbarTextView" parent="Widget.Material3.Snackbar.TextView">
-        <item name="android:textColor">?attr/colorOnSecondaryContainer</item>
-    </style>
-
-    <style name="Widget.App.SnackbarButton" parent="Widget.Material3.Button.TextButton.Snackbar">
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">?attr/colorAccent</item>
-    </style>
-
-
     <style name="Dialog.DeepLinkRboard.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Dialog.Rounded
         </item>
@@ -37,23 +19,5 @@
 
     <style name="PopupStyle" parent="@style/Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@drawable/popup_background</item>
-    </style>
-
-    <style name="Theme.DeepLinkRboard.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
-        <item name="appWidgetRadius">@dimen/roundCorners</item>
-        <item name="appWidgetInnerRadius">@dimen/roundCornersInner</item>
-    </style>
-
-    <style name="Theme.DeepLinkRboard.AppWidgetContainer" parent="Theme.DeepLinkRboard.AppWidgetContainerParent">
-        <item name="appWidgetPadding">@dimen/roundCorners</item>
-    </style>
-
-    <style name="BottomNavigationView.ActiveIndicator" parent="">
-        <item name="android:width">@dimen/m3_bottom_nav_item_active_indicator_width</item>
-        <item name="android:height">@dimen/m3_bottom_nav_item_active_indicator_height</item>
-        <item name="marginHorizontal">@dimen/m3_bottom_nav_item_active_indicator_margin_horizontal
-        </item>
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
-        <item name="android:color">?android:attr/textColorHighlightInverse</item>
     </style>
 </resources>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources translatable="false">
     <string name="app_name">DeepLinkRboard</string>
+    <string name="app_updated">App updated</string>
 </resources>
