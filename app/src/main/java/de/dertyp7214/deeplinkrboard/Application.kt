@@ -7,7 +7,6 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import com.dertyp7214.logs.helpers.Logger
 import com.downloader.PRDownloader
 import de.dertyp7214.colorutilsc.ColorUtilsC
 import de.dertyp7214.rboardcomponents.utils.ThemeUtils
@@ -31,14 +30,6 @@ class Application : Application() {
         ThemeUtils.registerActivityLifecycleCallbacks(this)
         ThemeUtils.applyTheme(this)
         PRDownloader.initialize(this)
-        doInBackground {
-            if (!URL("https://bin.utwitch.net").isReachable())
-                Logger.customBin = "hastebin.com"
-        }
-        PreferenceManager.getDefaultSharedPreferences(this)
-            .edit { putString("logMode", if (BuildConfig.DEBUG) "VERBOSE" else "ERROR") }
-        Logger.init(this)
-
         context = this
         uiHandler = Handler(Looper.getMainLooper())
         PreferenceManager.getDefaultSharedPreferences(this).apply {

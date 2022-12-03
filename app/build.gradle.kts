@@ -89,7 +89,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
     implementation("androidx.browser:browser:1.4.0")
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
 
     debugImplementation("androidx.compose.ui:ui-tooling:1.4.0-alpha02")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.21")
