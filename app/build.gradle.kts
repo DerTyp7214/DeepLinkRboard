@@ -36,6 +36,7 @@ android {
             "zh-rTW"
         )
     }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false

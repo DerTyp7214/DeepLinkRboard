@@ -12,6 +12,11 @@
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
+    <queries>
+        <package android:name="de.dertyp7214.rboardthememanager" />
+        <package android:name="de.dertyp7214.rboardthememanager.debug" />
+    </queries>
+
     <application
         android:name=".Application"
         android:extractNativeLibs="true"
@@ -24,6 +29,7 @@
         android:theme="@style/Theme.DeepLinkRboard"
         tools:ignore="AllowBackup"
         tools:targetApi="33">
+
         <activity
             android:name=".screens.MainActivity"
             android:exported="true"
