@@ -21,8 +21,8 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 33
-        versionCode = 102000
-        versionName = "1.0.2"
+        versionCode = 103000
+        versionName = "1.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
