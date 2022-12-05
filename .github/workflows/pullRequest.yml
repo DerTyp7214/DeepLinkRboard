@@ -1,0 +1,66 @@
+name: Build Pull Request
+
+on:
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    name: Build debug apk from current pull request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+        with:
+          submodules: recursive
+
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r25b
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3.6.0
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3.0.11
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            !~/.gradle/caches/build-cache-*
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts') }}
+          restore-keys: ${{ runner.os }}-gradle-
+
+      - name: Cache build cache
+        uses: actions/cache@v3.0.11
+        with:
+          path: |
+            ${{ github.workspace }}/.ccache
+            ~/.gradle/caches/build-cache-*
+          key: ${{ runner.os }}-build-cache-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-build-cache-
+
+      - name: File Permissions
+        run: chmod +x gradlew
+
+      - name: Accept Preview SDK License
+        run: echo -n -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > /usr/local/lib/android/sdk/licenses/android-sdk-preview-license
+
+      - name: Build apk
+        id: buildAllApks
+        uses: gradle/gradle-build-action@v2.3.3
+        with:
+          gradle-version: wrapper
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          arguments: assembleDebug
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Debug Artifact
+          path: app/build/outputs/apk/debug/app-debug.apk

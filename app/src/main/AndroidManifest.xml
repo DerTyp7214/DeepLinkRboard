@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="de.dertyp7214.deeplinkrboard">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <queries>
+        <package android:name="de.dertyp7214.rboardthememanager" />
+        <package android:name="de.dertyp7214.rboardthememanager.debug" />
+    </queries>
 
     <application
-        android:allowBackup="true"
+        android:name=".Application"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DeepLinkRboard"
-        tools:targetApi="31">
+        tools:ignore="AllowBackup"
+        tools:targetApi="33">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,6 +50,16 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <service
+            android:name=".services.AppThemeService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="de.dertyp7214.rboard.IAppTheme" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

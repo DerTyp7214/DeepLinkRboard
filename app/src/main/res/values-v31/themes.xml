@@ -1,0 +1,30 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.DeepLinkRboard" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+
+        <item name="fontFamily">@font/google_sans_text_400</item>
+
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <item name="floatingActionButtonStyle">?floatingActionButtonSecondaryStyle</item>
+        <item name="popupMenuStyle">@style/PopupStyle</item>
+        <item name="materialAlertDialogTheme">
+            @style/Dialog.DeepLinkRboard.MaterialAlertDialog
+        </item>
+        <item name="android:windowSplashScreenBackground">?attr/colorSurface</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/dertyp_branding</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowSplashScreenAnimationDuration">@integer/splashAnimationDuration</item>
+    </style>
+
+
+    <style name="Theme.DeepLinkRboard.TextAppearanceHeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/google_sans_text_500</item>
+    </style>
+
+    <style name="Theme.DeepLinkRboard.TextAppearanceHeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/google_sans_text_400</item>
+    </style>
+</resources>

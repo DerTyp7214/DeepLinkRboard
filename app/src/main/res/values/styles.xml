@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme.FullScreenDialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowBackground">?attr/colorSurface</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="Dialog.DeepLinkRboard.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Dialog.Rounded
+        </item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.Dialog.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/roundCorners</item>
+    </style>
+
+    <style name="PopupStyle" parent="@style/Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/popup_background</item>
+    </style>
+</resources>
