@@ -73,7 +73,7 @@ jobs:
 
       - name: Get JSON
         id: metadataJson
-        run: echo "METADATA_JSON=$(jq -c . < app/build/outputs/apk/debug/output-metadata.json)" >> $GITHUB_ENV
+        run: echo "METADATA_JSON=$(jq -c . < app/build/outputs/apk/release/output-metadata.json)" >> $GITHUB_ENV
 
       - name: Sign artifact
         id: signArtifact
