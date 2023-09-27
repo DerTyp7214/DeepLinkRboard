@@ -1,5 +1,7 @@
 @file:Suppress("UNUSED_VARIABLE")
-
+plugins {
+    alias(libs.plugins.ksp) apply false
+}
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -11,9 +13,9 @@ buildscript {
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.0.0-alpha09")
+        classpath(libs.gradle)
         //noinspection DifferentKotlinGradleVersion
-        classpath(kotlin("gradle-plugin", version = "1.7.21"))
+        classpath(libs.kotlin.gradle.plugin)
     }
 }
 
@@ -25,11 +27,5 @@ allprojects {
         maven("https://maven.fabric.io/public")
         maven("https://maven.google.com")
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
-    }
-}
-
-tasks {
-    val clean by registering(Delete::class) {
-        delete(buildDir)
     }
 }

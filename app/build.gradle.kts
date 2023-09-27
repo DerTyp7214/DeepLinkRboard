@@ -1,18 +1,17 @@
-import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
+import org.jetbrains.kotlin.config.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.application")
-    id("kotlin-android-extensions")
     kotlin("android")
     kotlin("kapt")
+    alias(libs.plugins.ksp)
 }
-
-val kotlinVersion: String = project.getKotlinPluginVersion()
 
 @Suppress("UnstableApiUsage")
 android {
-    compileSdk = 33
-    buildToolsVersion = "33.0.1"
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
     buildFeatures.dataBinding = true
     buildFeatures.viewBinding = true
     buildFeatures.buildConfig = true
@@ -20,9 +19,9 @@ android {
     defaultConfig {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
-        targetSdk = 33
-        versionCode = 103000
-        versionName = "1.0.3"
+        targetSdk = 34
+        versionCode = 110000
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -51,11 +50,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_15
-        targetCompatibility = JavaVersion.VERSION_15
+        isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_20
+        targetCompatibility = JavaVersion.VERSION_20
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_15.toString()
+        jvmTarget = JavaVersion.VERSION_20.toString()
     }
 
     packagingOptions {
@@ -70,27 +70,28 @@ android {
 dependencies {
     implementation(project(":colorutilsc"))
     implementation(project(":rboardcomponents"))
-    implementation("com.github.DerTyp7214:PreferencesPlus:1.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0-alpha04")
-    implementation("androidx.navigation:navigation-ui-ktx:2.6.0-alpha04")
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation(libs.preferencesplus)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.core.ktx)
     //noinspection DifferentStdlibGradleVersion
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21")
-    implementation("androidx.core:core:1.9.0")
-    implementation("com.google.android.material:material:1.8.0-alpha03")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha04")
-    implementation("androidx.preference:preference-ktx:1.2.0")
-    implementation("androidx.activity:activity-ktx:1.7.0-alpha02")
-    implementation("androidx.fragment:fragment-ktx:1.6.0-alpha03")
-    implementation("com.google.code.gson:gson:2.10")
-    implementation("de.dertyp7214:PRDownloader:v0.6.0")
-    implementation("androidx.appcompat:appcompat:1.7.0-alpha01")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
-    implementation("androidx.browser:browser:1.4.0")
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.androidx.core)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.preference.ktx)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.gson)
+    implementation(libs.prdownloader)
+    implementation(libs.androidx.appcompat)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.browser)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 
-    debugImplementation("androidx.compose.ui:ui-tooling:1.4.0-alpha02")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.21")
+    debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.kotlin.reflect)
 }
