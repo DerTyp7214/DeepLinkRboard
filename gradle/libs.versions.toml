@@ -5,9 +5,10 @@ appcompat = "1.7.0-alpha03"
 browser = "1.6.0"
 constraintlayout = "2.2.0-alpha12"
 coreKtx = "1.12.0"
-espressoCore = "3.5.1"
+core = "1.12.0"
 fragmentKtx = "1.6.1"
-gradle = "8.3.0-alpha05"
+gradle = "8.3.0-alpha06"
+espresso-core = "3.6.0-alpha01"
 gson = "2.10.1"
 junit = "4.13.2"
 kotlin-gradle-plugin = "1.9.10"
@@ -26,17 +27,18 @@ androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
-androidx-core = { module = "androidx.core:core", version.ref = "coreKtx" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+core = { module = "androidx.core:core", version.ref = "core" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
-androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
+preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
 androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "uiTooling" }
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { module = "junit:junit", version.ref = "junit" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin-gradle-plugin" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin-gradle-plugin" }
