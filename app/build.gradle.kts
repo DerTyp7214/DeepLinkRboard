@@ -20,8 +20,8 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 110000
-        versionName = "1.1.0"
+        versionCode = 111000
+        versionName = "1.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -74,13 +74,13 @@ dependencies {
     implementation(libs.legacy.support.v4)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
     //noinspection DifferentStdlibGradleVersion
     implementation(libs.kotlin.stdlib)
-    implementation(libs.androidx.core)
+    implementation(libs.core)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.preference.ktx)
+    implementation(libs.preference.ktx)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.gson)
@@ -88,7 +88,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.espresso.core)
     implementation(libs.androidx.browser)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
