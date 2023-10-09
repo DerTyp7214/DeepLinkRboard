@@ -1,26 +1,26 @@
 [versions]
-activityKtx = "1.7.2"
+activityKtx = "1.8.0"
 androidx-junit = "1.1.5"
 appcompat = "1.7.0-alpha03"
 browser = "1.6.0"
-constraintlayout = "2.2.0-alpha12"
+constraintlayout = "2.2.0-alpha13"
 coreKtx = "1.12.0"
 core = "1.12.0"
 fragmentKtx = "1.6.1"
-gradle = "8.3.0-alpha06"
+gradle = "8.3.0-alpha07"
 espresso-core = "3.6.0-alpha01"
 gson = "2.10.1"
 junit = "4.13.2"
 kotlin-gradle-plugin = "1.9.10"
 kspPlugin = "1.9.10-1.0.13"
 legacySupportV4 = "1.0.0"
-material = "1.9.0"
-navigationFragmentKtx = "2.7.3"
+material = "1.10.0"
+navigationFragmentKtx = "2.7.4"
 prdownloader = "v0.6.0"
 preferenceKtx = "1.2.1"
 preferencesplus = "1.1"
-desugar_jdk_libs = "2.0.3"
-uiTooling = "1.5.1"
+desugar_jdk_libs_nio = "2.0.3"
+uiTooling = "1.5.3"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -47,7 +47,7 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 prdownloader = { module = "de.dertyp7214:PRDownloader", version.ref = "prdownloader" }
 preferencesplus = { module = "com.github.DerTyp7214:PreferencesPlus", version.ref = "preferencesplus" }
-desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+desugar_jdk_libs_nio = { module = "com.android.tools:desugar_jdk_libs_nio", version.ref = "desugar_jdk_libs_nio" }
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
