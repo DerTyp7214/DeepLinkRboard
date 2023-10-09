@@ -20,8 +20,8 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 111000
-        versionName = "1.1.1"
+        versionCode = 112000
+        versionName = "1.1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -90,7 +90,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.androidx.browser)
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    coreLibraryDesugaring(libs.desugar.jdk.libs.nio)
 
     debugImplementation(libs.androidx.ui.tooling)
     implementation(libs.kotlin.reflect)
