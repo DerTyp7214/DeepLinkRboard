@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.Packaging
 import org.jetbrains.kotlin.config.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -20,8 +21,8 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 112000
-        versionName = "1.1.2"
+        versionCode = 113000
+        versionName = "1.1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -58,7 +59,7 @@ android {
         jvmTarget = JavaVersion.VERSION_20.toString()
     }
 
-    packagingOptions {
+    packaging {
         jniLibs {
             useLegacyPackaging = true
         }
