@@ -21,8 +21,8 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 114000
-        versionName = "1.1.4"
+        versionCode = 115000
+        versionName = "1.1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -52,11 +52,11 @@ android {
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_20
-        targetCompatibility = JavaVersion.VERSION_20
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_20.toString()
+        jvmTarget = JavaVersion.VERSION_21.toString()
     }
 
     packaging {
