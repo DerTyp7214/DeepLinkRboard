@@ -11,8 +11,8 @@ plugins {
 
 @Suppress("UnstableApiUsage")
 android {
-    compileSdk = 34
-    buildToolsVersion = "34.0.0"
+    compileSdkPreview = "VanillaIceCream"
+    buildToolsVersion = "35.0.0 rc1"
     buildFeatures.dataBinding = true
     buildFeatures.viewBinding = true
     buildFeatures.buildConfig = true
@@ -21,7 +21,7 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 115000
+        versionCode = 115001
         versionName = "1.1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
