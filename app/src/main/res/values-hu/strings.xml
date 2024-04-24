@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Beállítások</string>
+    <string name="next">Következő</string>
+    <string name="previous">Előző</string>
+    <string name="deeplink">Deeplink</string>
+    <string name="share">Megosztás</string>
+    <string name="channel_name">Push Értesítések</string>
+    <string name="channel_description">Frissítésekért és információkért.</string>
+    <string name="channel_name_download">Letöltés Értesítések</string>
+    <string name="channel_description_download">Letöltési értesítésekért</string>
+    <string name="download_update">Frissítés Letöltése</string>
+    <string name="download_update_progress">Frissítés Letöltése (%s)</string>
+    <string name="download_complete">Letöltés kész</string>
+    <string name="download_error">Hiba a letöltés során</string>
+    <string name="error">Hiba</string>
+    <string name="update_ready">A frissítés készen áll, szeretné telepíteni?</string>
+    <string name="update">Frissítés</string>
+    <string name="unreleased">Ez az alkalmazás még nem jelent meg, egyes funkciók nem feltétlenül működnek. Kérjük, ne jelezz hibákat a főcsoportnak.</string>
+    <string name="notice">Figyelmeztetés</string>
+    <string name="highlight">Kiemelés</string>
+    <string name="input">Bevitel</string>
+</resources>

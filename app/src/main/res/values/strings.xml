@@ -7,8 +7,6 @@
     <string name="previous">Previous</string>
     <string name="deeplink">Deeplink</string>
     <string name="share">Share</string>
-    <string name="default_notification_channel_id">push_channel</string>
-    <string name="download_notification_channel_id">download_channel</string>
     <string name="channel_name">Push Notifications</string>
     <string name="channel_description">For updates and information.</string>
     <string name="channel_name_download">Download Notifications</string>
@@ -22,4 +20,6 @@
     <string name="update">Update</string>
     <string name="unreleased">This app is unreleased, some features may not work. Please don\'t report any errors to the main group.</string>
     <string name="notice">Notice</string>
+    <string name="highlight">Highlight</string>
+    <string name="input">Input</string>
 </resources>

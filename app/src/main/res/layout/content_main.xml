@@ -17,6 +17,8 @@
 
         <LinearLayout
             android:id="@+id/layout"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
@@ -34,8 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="Input"
+        android:hint="@string/input"
         android:inputType="text"
+        android:layout_marginHorizontal="8dp"
         app:layout_constraintBottom_toTopOf="@+id/highlight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="Highlight"
+        android:hint="@string/highlight"
+        android:layout_marginHorizontal="8dp"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

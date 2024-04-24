@@ -12,7 +12,7 @@ plugins {
 @Suppress("UnstableApiUsage")
 android {
     compileSdkPreview = "VanillaIceCream"
-    buildToolsVersion = "35.0.0 rc1"
+    buildToolsVersion = "35.0.0 rc3"
     buildFeatures.dataBinding = true
     buildFeatures.viewBinding = true
     buildFeatures.buildConfig = true
@@ -21,7 +21,7 @@ android {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
         targetSdk = 34
-        versionCode = 115001
+        versionCode = 115004
         versionName = "1.1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -86,7 +86,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.gson)
     implementation(libs.prdownloader)
-    implementation(libs.androidx.appcompat)
+    implementation(libs.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.espresso.core)

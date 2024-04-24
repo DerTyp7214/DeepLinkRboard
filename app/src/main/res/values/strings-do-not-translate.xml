@@ -2,4 +2,6 @@
 <resources translatable="false">
     <string name="app_name">DeepLinkRboard</string>
     <string name="app_updated">App updated</string>
+    <string name="default_notification_channel_id">push_channel</string>
+    <string name="download_notification_channel_id">download_channel</string>
 </resources>
