@@ -1,30 +1,29 @@
 [versions]
-activityKtx = "1.9.0-alpha03"
+activityKtx = "1.9.0"
 androidx-junit = "1.1.5"
 appcompat = "1.7.0-alpha03"
-browser = "1.8.0-beta02"
+browser = "1.8.0"
 constraintlayout = "2.2.0-alpha13"
-coreKtx = "1.13.0-alpha05"
-core = "1.13.0-alpha05"
-fragmentKtx = "1.7.0-alpha10"
-gradle = "8.4.0-alpha10"
+coreKtx = "1.13.0"
+core = "1.13.0"
+fragmentKtx = "1.8.0-alpha02"
+gradle = "8.5.0-alpha06"
 espresso-core = "3.6.0-alpha03"
 gson = "2.10.1"
 junit = "4.13.2"
-kotlin-gradle-plugin = "1.9.22"
-kspPlugin = "1.9.22-1.0.17"
+kotlin-gradle-plugin = "1.9.23"
+kspPlugin = "1.9.23-1.0.20"
 legacySupportV4 = "1.0.0"
-material = "1.11.0"
-navigationFragmentKtx = "2.7.7"
+material = "1.13.0-alpha01"
+navigationFragmentKtx = "2.8.0-alpha07"
 prdownloader = "v0.6.0"
 preferenceKtx = "1.2.1"
 preferencesplus = "1.1"
 desugar_jdk_libs_nio = "2.0.4"
-uiTooling = "1.6.1"
+uiTooling = "1.7.0-alpha07"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 core = { module = "androidx.core:core", version.ref = "core" }
