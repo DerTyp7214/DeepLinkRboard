@@ -1,7 +1,9 @@
 package de.dertyp7214.deeplinkrboard.screens
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.os.Build
@@ -13,6 +15,8 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +35,7 @@ import de.dertyp7214.deeplinkrboard.databinding.ActivityMainBinding
 import de.dertyp7214.deeplinkrboard.utils.AppStartUp
 import de.dertyp7214.deeplinkrboard.utils.PackageUtils
 import de.dertyp7214.deeplinkrboard.utils.UpdateHelper
+import de.dertyp7214.rboardcomponents.core.getActivity
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -51,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -66,6 +70,21 @@ class MainActivity : AppCompatActivity() {
             setUp()
             onCreate { intent ->
                 checkUpdate(intent)
+
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+                    enableEdgeToEdge(
+                        statusBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT)
+                    )
+                }
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    window.setDecorFitsSystemWindows(false)
+                }
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    window.isNavigationBarContrastEnforced = false
+                    window.navigationBarColor = Color.TRANSPARENT
+                }
             }
 
         }

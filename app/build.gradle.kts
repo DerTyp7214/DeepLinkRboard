@@ -11,8 +11,8 @@ plugins {
 
 @Suppress("UnstableApiUsage")
 android {
-    compileSdkPreview = "VanillaIceCream"
-    buildToolsVersion = "35.0.0 rc3"
+    compileSdkPreview = "Baklava"
+    buildToolsVersion = "36.0.0 rc1"
     buildFeatures.dataBinding = true
     buildFeatures.viewBinding = true
     buildFeatures.buildConfig = true
@@ -20,9 +20,9 @@ android {
     defaultConfig {
         applicationId = "de.dertyp7214.deeplinkrboard"
         minSdk = 23
-        targetSdk = 34
-        versionCode = 115004
-        versionName = "1.1.5"
+        targetSdk = 35
+        versionCode = 116000
+        versionName = "1.1.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -52,11 +52,11 @@ android {
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.current()
+        targetCompatibility = JavaVersion.current()
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_21.toString()
+        jvmTarget = JavaVersion.current().toString()
     }
 
     packaging {
@@ -71,7 +71,6 @@ android {
 dependencies {
     implementation(project(":colorutilsc"))
     implementation(project(":rboardcomponents"))
-    implementation(libs.preferencesplus)
     implementation(libs.legacy.support.v4)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

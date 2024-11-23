@@ -21,7 +21,7 @@ jobs:
 
       - uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26d
+          ndk-version: r27c
 
       - name: Get Commit Message
         id: commitMessage
@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 23
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v4
@@ -66,10 +66,11 @@ jobs:
         
       - name: Build apk
         id: buildAllApks
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: wrapper
-          arguments: assembleRelease
+            gradle-version: wrapper
+      - name: AssembleRelease the project
+        run: ./gradlew assembleRelease
 
       - name: Get JSON
         id: metadataJson
@@ -77,14 +78,14 @@ jobs:
 
       - name: Sign artifact
         id: signArtifact
-        uses: ilharp/sign-android-release@v1.0.4
+        uses: ilharp/sign-android-release@v1
         with:
           releaseDir: app/build/outputs/apk/release
           keyAlias: ${{ secrets.KEYALIAS }}
           signingKey: ${{ secrets.SIGNING_KEY }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
-          buildToolsVersion: '35.0.0-rc3'
+          buildToolsVersion: '36.0.0-rc1'
 
       - name: Rename APK
         run: mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/app-release.apk
@@ -134,7 +135,7 @@ jobs:
 
       - uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26d
+          ndk-version: r27c
 
       - name: Get Commit Message
         id: commitMessage
@@ -144,7 +145,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 23
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v4
@@ -179,10 +180,11 @@ jobs:
 
       - name: Build apk
         id: buildAllApks
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: wrapper
-          arguments: assembleDebug
+            gradle-version: wrapper
+      - name: AssembleDebug the project
+        run: ./gradlew assembleDebug
 
       - name: Get JSON
         id: metadataJson
@@ -190,14 +192,14 @@ jobs:
 
       - name: Sign artifact
         id: signArtifact
-        uses: ilharp/sign-android-release@v1.0.4
+        uses: ilharp/sign-android-release@v1
         with:
           releaseDir: app/build/outputs/apk/debug
           keyAlias: ${{ secrets.KEYALIAS }}
           signingKey: ${{ secrets.SIGNING_KEY }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
-          buildToolsVersion: '35.0.0-rc3'
+          buildToolsVersion: '36.0.0-rc1'
 
       - name: Rename APK
         run: mv app/build/outputs/apk/debug/app-debug-signed.apk app/build/outputs/apk/debug/app-debug.apk
